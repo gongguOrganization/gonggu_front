@@ -1,0 +1,27 @@
+footer {
+    height: 150px;
+    margin-top: 200px;
+    background-color: #0D4212;  
+}
+
+.footerBox {
+    width: 100%;
+    height: 200px;
+    margin: 100 auto;
+    text-align: center;
+    background-color: #0D4212;
+}
+
+.Maker {
+    float: left;
+    margin: 5px 0 0 30px;
+}
+
+li {
+    font-size: 13px;
+    text-align: start;
+    margin-top: 10px;
+    list-style-type: none;
+    color: antiquewhite;
+    border-inline: inherit;
+}

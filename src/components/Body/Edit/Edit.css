@@ -1,0 +1,112 @@
+.Center-Text {
+	text-align: center;
+}
+
+.WriteBox {
+	width: 880px;
+	margin: 30px auto;
+	padding: 30px;
+	border: 1px solid #F7F4E3;
+	border-radius: 30px;
+}
+
+.w-15 {
+	width: 15%;
+}
+
+.w-80 {
+	width: 80%;
+}
+
+.write-label {
+	float: left;
+	background-color: #D2E1C8;
+	padding: 10px 0;
+	text-align: center;
+	border-radius: 30px;
+	margin-bottom: 20px;
+}
+
+.write-value {
+	background-color: #F7F4E3;
+	margin-bottom: 20px;
+	padding: 10px 0;
+	text-align: center;
+	border-radius: 30px;
+}
+
+.w-60 {
+	width: 60%;
+}
+
+.w-80 {
+	width: 80%;
+}
+
+.w-90 {
+	width: 90%;
+}
+
+.glass {
+	background-color: #00000000;
+	border: none;
+}
+
+.write-textarea {
+	width: 80%;
+	height: 100%;
+	resize: none;
+}
+
+.h-44 {
+	height: 44px;
+}
+
+
+input::file-selector-button {
+	display: none;
+}
+
+.write-last {
+	margin-bottom: 0;
+}
+
+.Button-Box {
+	background-color: #F7F4E3;
+	color: #0D4212;;
+	border: 0;
+	border-radius: 15px;
+	height: 40px;
+	font-size: 25px;
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+.Button-Box-Primary {
+	background-color: #0D4212;
+	color: #D2E1C8;
+}
+
+.Bold-font {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.Font-18 {
+	font-size: 18px;
+}
+
+.toastui-editor-defaultUI-toolbar {
+	background-color: #D2E1C8 !important;
+}
+
+.input-small {
+	padding-left: 15px;
+}
+
+.hover:hover {
+	cursor: pointer;
+}

@@ -1,0 +1,10 @@
+{
+    "printWidth": 80,
+    "prettier.javascriptEnable" : ["javascript", "javascriptreact"],
+    "prettier.printWidth" : 2,
+    "prettier.useTabs": false,
+    "prettier.singleQuote":true,
+    "prettier.tabWidth": 4
+}
+
+

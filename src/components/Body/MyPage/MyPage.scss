@@ -1,0 +1,135 @@
+//$main-color: #0d4212;
+
+.mpTitle {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: block;
+
+  font-size: 2em;
+  text-decoration: none;
+  font-weight: bold;
+  color: #0d4212 !important;
+}
+
+.infoTitle {
+  display: block;
+
+  font-size: 1.5em;
+
+  font-weight: bold;
+  text-align: center;
+  margin: 30px auto;
+}
+
+.mpMenuBlock {
+  padding: 1rem;
+  width: 269px;
+  background: #d2e1c8;
+  cursor: pointer;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  color: #0d4212;
+  text-align: center;
+  font-size: 1.125rem;
+
+  // &:hover {
+  //   font-weight: bold;
+  // }
+
+  & + & {
+    margin-left: 2rem;
+  }
+}
+
+.mpFormBlock {
+  background: #f7f4e3;
+  margin: 0 auto;
+  width: 828px !important;
+  min-height: 350px;
+  padding: 30px;
+  padding-bottom: 50px;
+  margin-bottom: 20px;
+
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.mpSubTitle {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.checkPwBtn {
+  background-color: #0d4212 !important;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: white;
+
+  position: relative;
+  cursor: pointer;
+  display: block;
+  padding: 1em;
+  text-align: center;
+  text-overflow: ellipsis;
+  text-transform: inherit;
+}
+
+.infoFormAlign {
+  text-align: center;
+}
+
+.mpListTitleBlock {
+  width: 70%;
+  height: 40px;
+  line-height: 40px;
+  margin: auto !important;
+  margin-bottom: 10px !important;
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid #0d4212;
+  border-radius: 40px;
+  text-align: center;
+  font-weight: bold;
+  color: #0d4212;
+}
+
+.mpListBlock {
+  width: 70%;
+  height: 40px;
+  line-height: 40px;
+  margin: auto !important;
+  margin-bottom: 10px !important;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #0d4212;
+  border-radius: 40px;
+
+  &:hover {
+    background-color: #d2e1c8;
+    transform: scale(1.05);
+    overflow: hidden;
+  }
+}
+
+.mpPostTag {
+  text-decoration: none;
+  text-align: center;
+  color: #0d4212 !important;
+}
+
+.detail .form-control {
+  //width: 50%;
+  height: 40px;
+
+  margin: 0 auto;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #0d4212;
+  border-radius: 40px;
+}
+
+.detail.label {
+  line-height: 40px;
+  text-align: center;
+  font-weight: bold;
+}

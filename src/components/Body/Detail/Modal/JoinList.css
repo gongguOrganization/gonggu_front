@@ -1,0 +1,23 @@
+tr, td {
+	border: 1px solid;
+}
+
+th, .name {
+	text-align: center;
+}
+
+th {
+	height: 50px;
+	font-size: 18px;
+}
+
+td:not(.name) {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+tr {
+	height: 50px;
+	font-size: 18px;
+}
+

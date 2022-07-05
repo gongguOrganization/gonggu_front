@@ -1,0 +1,103 @@
+.D-day {
+	color: #D2E1C8;
+	background-color: #0D4212;
+	border-radius: 13px;
+	width: inherit;
+	padding: 2px 15px;
+}
+
+.Font-50 {
+	font-size: 50px !important;
+}
+
+.Font-40 {
+	font-size: 40px !important;
+}
+
+.Font-21 {
+	font-size: 21px !important;
+}
+
+.Font-20 {
+	font-size: 20px !important;
+}
+
+.Font-gray {
+	color: #828282;
+}
+
+.Text-right {
+	text-align: right;
+}
+
+.Button-Box {
+	background-color: #F7F4E3;
+	color: #0D4212;;
+	border: 0;
+	height: 40px;
+	font-size: 25px;
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+.Button-Box-Primary {
+	background-color: #0D4212;
+	color: #D2E1C8;
+}
+
+.Button-Box-Forbidden {
+	background-color: #828282 !important;
+	color: #D2E1C8 !important
+}
+
+.Button-Box-Forbidden:hover {
+	font-weight: inherit !important;
+}
+
+.Bold-font {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.Normal-font {
+	font-size: 30px;
+	font-weight: normal;
+}
+
+.Button-Box:hover {
+	font-weight: bold;
+}
+
+progress {
+	-webkit-appearance: none;
+	height: 10px;
+}
+
+::-webkit-progress-bar {
+	background: #D2E1C8;
+}
+
+::-webkit-progress-value {
+	background: #0D4212;
+}
+
+.Detail-img-div {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	overflow:hidden;
+}
+
+.Detail-img:hover {
+	transform:scale(1.1);
+	-o-transform:scale(1.1);
+	-moz-transform:scale(1.1);
+	-webkit-transform:scale(1.1);
+	transition: transform .35s;
+	-o-transition: transform .35s;
+	-moz-transition: transform .35s;
+	-webkit-transition: transform .35s;
+}

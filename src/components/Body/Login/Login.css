@@ -1,0 +1,176 @@
+* {
+	box-sizing: border-box;
+}
+.body {
+	font-family:'Nanum Gothic', sans-serif;
+    font-weight: 100;
+    line-height: 60%;
+	font-size: 16px;
+	color: rgba(255, 255, 255, 0.5);
+}
+.form-box .login {
+	background-color: rgba(255, 255, 255, 0.5);
+	margin-top: 30px;
+    margin: auto auto;
+	padding: 40px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px #000;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 500px;
+	height: 600px;
+}
+.form-box .register{
+	margin-top: 30px;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin: auto auto;
+	padding: 40px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px #000;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 500px;
+	height: 1000px;
+}
+.form-box img{
+    width:200px;
+    height: 150px;
+	padding-bottom: 10px;
+	text-align: center;
+    margin-left: 110px;
+}
+.form-box:before {
+	background-color: #1E4119;
+    width: 100%;
+	height: 100%;
+	background-size: cover;
+	content: "";
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	display: block;
+	
+}
+.form-box .header-text {
+	width:160px;
+    height: 120px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+.form-box input {
+	margin: 10px 0px;
+	border: none;
+	padding: 10px;
+	border-radius: 30px;
+	width: 100%;
+    background-color: rgba(221, 221, 221, 0.5);
+	font-size: 18px;
+	font-family: poppins;
+	color: rgb(118, 118, 118);
+}
+.form-box select {
+	margin: 10px 0px;
+	border: none;
+	padding: 10px;
+	border-radius: 30px;
+	width: 100%;
+    background-color: rgba(221, 221, 221, 0.5);
+	font-size: 18px;
+	font-family: poppins;
+	color: rgb(118, 118, 118);
+}
+.form-box .register .post {
+	float:left;
+	border: none;
+	padding: 10px;
+	border-radius: 30px;
+	width: 48%;
+    background-color: rgba(221, 221, 221, 0.5);
+	font-size: 18px;
+	font-family: poppins;
+	color: rgb(118, 118, 118);
+}
+.form-box .register .postclick {
+	float:left;
+	margin: 10px 0px;
+	margin-left: 4%;
+	border: none;
+	padding: 10px;
+	border-radius: 30px;
+	width: 48%;
+    background-color: #1f31627f;
+	font-size: 18px;
+	font-family: poppins;
+	color: rgba(221, 221, 221, 0.5);
+}
+
+.form-box input[type=checkbox] {
+	display: none;
+    margin-right: 20px;
+}
+.form-box label {
+	position: relative;
+	margin-left: 280px;
+	margin-right: 10px;
+	top: 5px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+.form-box label:before {
+	content: "";
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border-radius: 30px;
+	position: absolute;
+	left: 0;
+	bottom: 1px;
+	background-color: rgba(221, 221, 221, 0.5);
+}
+
+.form-box input[type=checkbox]:checked+label:before {
+	content: "\2713";
+	font-size: 20px;
+	color: #000;
+	text-align: center;
+	line-height: 20px;
+}
+.form-box span {
+	font-size: 14px;
+}
+.form-box button {
+	background-color: #1f31627f;
+	color: rgba(255, 255, 255, 0.5);
+	border: none;
+	border-radius: 30px;
+	cursor: pointer;
+	width: 100%;
+	font-size: 18px;
+	padding: 10px;
+	margin: 20px 0px;
+}
+span:before{
+	color: #BBB;
+}
+span:after{
+	color: #1F3162;
+}
+.form-box a:link{
+    color: #BBB;
+    margin-left: 290px;
+}
+.form-box a:visited{
+    color: #1F3162;
+    margin-left: 290px;
+}
