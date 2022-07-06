@@ -12,7 +12,6 @@ import { select } from "../../../redux/board/board";
 const Qna = ({ checkId, board }) => {
   const question_id = localStorage.getItem("id");
   const dispatch = useDispatch();
-  const [load, setLoad] = useState("");
 
   const onInsert = useCallback((question) => {
     dispatch(
@@ -22,13 +21,12 @@ const Qna = ({ checkId, board }) => {
         question: question,
       }),
     );
-    setLoad(question);
   }, []);
 
   return (
     <QnaTemplate>
       <QnaInsert onInsert={onInsert} />
-      <QnaList chckId={checkId} board={board} load={load}/>
+      <QnaList chckId={checkId} board={board}/>
     </QnaTemplate>
   );
 };
