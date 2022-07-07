@@ -3,20 +3,46 @@ import { FaSearch } from "react-icons/fa";
 import { Card, Row, Button } from "react-bootstrap";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { boardSelect } from "./../../../redux/board/mainboard";
+import BoardPagination from "./BoardPagination";
 
 const Board = () => {
+  const board = useSelector((state) => state.board);
+  const mainboard = useSelector((state) => state.mainboard);
+  const [limit, setLimit] = useState(5);
+  const [page, setPage] = useState(1);
+  const offset = (page - 1) * limit;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(boardSelect({ title: "" }));
+  }, []);
+
+ 
   return (
-    <div>
+   <div>
       <Search></Search>
       <br></br>
       <div className="CardPosition">
-        {Array.from({ length: 1 }).map((_, idx) => (
-          <BoardContent key={idx}></BoardContent>
-        ))}
+      {
+          mainboard.data.slice(offset, offset + limit).map((mainboard, idx) => (
+            Array.from({ length: 1 }).map((_, idx) => (
+              <BoardContent mainboard={mainboard} key={idx}></BoardContent>
+            ))
+          )
+        )
+      }
       </div>
+      
+        <div style={{margin:100}}>
+          <BoardPagination
+            total={mainboard.data.length}
+            limit={limit}
+            page={page}
+            setPage={setPage} />
+        </div>
     </div>
   );
 };
@@ -49,18 +75,13 @@ const Search = () => {
   );
 };
 
-const BoardContent = () => {
-  const dispatch = useDispatch();
+const BoardContent = ({mainboard}) => {
+
   const { id } = useParams();
-  const mainboard = useSelector((state) => state.mainboard);
-
-  useEffect(() => {
-    dispatch(boardSelect({ title: "" }));
-  }, []);
-
+  // const mainboard = useSelector((state) => state.mainboard);
+  
   const bucket = "imagestore-39fb6.appspot.com";
-
-  return mainboard.data.map((mainboard, idx) => (
+  return (
     <Card className="CardStyle CardDisplay">
       <Link to={`/detail/${mainboard.id}`} className="detail-link">
         <Card.Body>
@@ -68,15 +89,15 @@ const BoardContent = () => {
             className="ContentImg"
             variant="top"
             alt="img"
-			onError={(e)=>{e.target.onerror = null; e.target.src="/images/logo.png"}}
-            src={`https://firebasestorage.googleapis.com/v0/b/${bucket}/o/${mainboard.img}?alt=media`}
+            onError={(e) => { e.target.onerror = null; e.target.src = "/images/logo.png"; } }
+            src={"/images/logo.png"} //{`https://firebasestorage.googleapis.com/v0/b/${bucket}/o/${mainboard.img}?alt=media`}
           />
           <br></br>
           <br></br>
           <Card.Title className="TitleText">
             <h5>{mainboard.title}</h5>
             <br></br>
-            <div style={{"textAlign":"right", "paddingRight":"20px"}}>
+            <div style={{ "textAlign": "right", "paddingRight": "20px" }}>
               {mainboard.currentCount}명 / {mainboard.maxCount}명{" "}
             </div>
           </Card.Title>
@@ -91,5 +112,5 @@ const BoardContent = () => {
         </Card.Body>
       </Link>
     </Card>
-  ));
+  )
 };
