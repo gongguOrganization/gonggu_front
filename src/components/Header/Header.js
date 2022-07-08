@@ -137,7 +137,7 @@ const Header = () => {
                 onClick={() => handleOnClick(idx + 1)}
                 id={idx + 2}
               >
-                {c.name}
+                {c.categoryName}
               </button>
             </span>
           ))}
