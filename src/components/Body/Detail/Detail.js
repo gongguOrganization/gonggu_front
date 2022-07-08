@@ -13,12 +13,13 @@ const Body = () => {
   const navigate = useNavigate();
 
   const [show, setShow] = useState(false);
-  const { id } = useParams();
+  const { id } = useParams(); //board pk
 
   const bucket = "imagestore-39fb6.appspot.com";
 
   const board = useSelector((state) => state.board);
   const participation = useSelector((state) => state.participation);
+  const old_id = board.data.get("_id");
 
   useEffect(() => {
     dispatch(select(id));
@@ -33,8 +34,6 @@ const Body = () => {
       }
     }
   }, [board]);
-
-  console.log(board);
 
   return (
     <>
@@ -58,7 +57,7 @@ const Body = () => {
             </div>
           </Col>
           <Col xs={4}>
-            <Detail setShow={setShow} boardId={id} board={board} />
+            <Detail setShow={setShow} boardId={id} board={board} boardOldId={old_id} />
           </Col>
           <Col xs={2} />
         </Row>
@@ -73,7 +72,7 @@ const Body = () => {
           <Col xs={2} />
         </Row>
       </Container>
-      <JoinList show={show} setShow={setShow} boardId={id} />
+      <JoinList show={show} setShow={setShow} boardId={id} oldBoardId={old_id} />
       <Qna checkId={id} board={board} />
     </>
   );

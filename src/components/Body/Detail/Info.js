@@ -4,18 +4,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { joinState } from "../../../redux/participation/participation";
 import { ButtonOfWriter, ButtonOfReaderBeforeJoin, ButtonOfReaderAfterJoin} from "./InfoButton";
 
-const Detail = ({ setShow, boardId, board }) => {
+const Detail = ({ setShow, boardId, board, boardOldId }) => {
 
 	const setDate = new Date(board.data.get('endDate')); //end Date
 	const now = new Date(); //today Date
 	const distance = setDate.getTime() - now.getTime();
 	let day = Math.floor(distance/(1000*60*60*24));
-	console.log("day : ", day);
 	const dispatch = useDispatch();
 	const participation = useSelector((state) => state.participation);
 
 	useEffect(() => {
-		dispatch(joinState(boardId))
+		dispatch(joinState(boardOldId))
 	}, []);
 
 	return (
@@ -32,9 +31,8 @@ const Detail = ({ setShow, boardId, board }) => {
 				<p className="Bold-font" style={{"textAlign":"right"}}>{board.data.get('price')}<span className="Normal-font">원</span></p>
 			</Row>
 			{localStorage.getItem('id') === board.data.get('userId') ? <ButtonOfWriter setShow={setShow} boardId={boardId} writer={board.data.get("userId")}/> : null}
-			{localStorage.getItem('id') !== board.data.get('userId') && !participation.data ? <ButtonOfReaderBeforeJoin boardId={boardId} day={day}/> : null}
-			{localStorage.getItem('id') !== board.data.get('userId') && participation.data ? <ButtonOfReaderAfterJoin boardId={boardId} writer={board.data.get("userId")}/> : null}
-
+			{localStorage.getItem('id') !== board.data.get('userId') && !participation.data ? <ButtonOfReaderBeforeJoin boardOldId={boardOldId} boardId={boardId} day={day}/> : null}
+			{localStorage.getItem('id') !== board.data.get('userId') && participation.data ? <ButtonOfReaderAfterJoin boardOldId={boardOldId} boardId={boardId} writer={board.data.get("userId")}/> : null}
 		</>
 	);
 };

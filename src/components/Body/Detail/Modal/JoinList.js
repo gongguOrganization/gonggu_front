@@ -5,14 +5,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { joinList } from "../../../../redux/participation/participation";
 
-const JoinList = ({ show, setShow, boardId }) => {
+const JoinList = ({ show, setShow, boardId, oldBoardId }) => {
+	console.log("oldBoardID >> ", oldBoardId);
 	const handleShow = () => setShow(false);
 	const participation = useSelector(state => state.participation);
 	const dispatch = useDispatch();
 	useEffect(() => {
-		dispatch(joinList(boardId));
-	}, []);
-	console.log(participation.list.length)
+		dispatch(joinList(oldBoardId));
+	}, [oldBoardId]);
 	console.log(participation)
 	return (
 		<Modal show={show}

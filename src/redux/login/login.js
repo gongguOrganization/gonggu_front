@@ -120,13 +120,14 @@ const login = (state = initialLogin, action) =>
         draft.isLoggingIn = false;
         draft.isLoggedIn = true;
         draft.data.id = action.data.id;
-        draft.data.token = action.data;
+        draft.data.token = action.data.token;
         //isLoading=false;
         break;
       case LOGIN_FAIL:
         draft.isLoggingIn = false;
         draft.isLoggedIn = false;
         draft.logInErrorReason = "error";
+		alert("아이디 혹은 비밀번호를 확인해주세요");
         break;
       default:
         return state;

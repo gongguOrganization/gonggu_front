@@ -24,7 +24,7 @@ export const ButtonOfWriter = ({ setShow, writer, boardId }) => {
 
 	const deleteBoard = () => {
 		if(window.confirm("삭제하시겠습니까?")) {
-			customAxios(`/board/${boardId}`, "delete")
+			customAxios(`/board-detail-service/board/${boardId}`, "delete")
 			.then((data) => {
 				if(data) {
 					navigate("/");
@@ -65,7 +65,7 @@ export const ButtonOfWriter = ({ setShow, writer, boardId }) => {
 	);
 };
 
-export const ButtonOfReaderBeforeJoin = ({ boardId, day }) => {
+export const ButtonOfReaderBeforeJoin = ({ boardOldId, boardId, day }) => {
   const dispatch = useDispatch();
 
   const participation = useSelector((state) => state.participation);
@@ -73,18 +73,18 @@ export const ButtonOfReaderBeforeJoin = ({ boardId, day }) => {
 
 
   const joinParticipation = function () {
-    dispatch(create(boardId));
+    dispatch(create(boardOldId));
   };
 
   useEffect(() => {
     if (participation.data) {
-      dispatch(select(boardId));
+      dispatch(select(boardOldId));
     }
   }, [participation]);
 
   let currentCount = Number(board.data.get("currentCount"));
   let maxCount = Number(board.data.get("maxCount"));
-  console.log(currentCount, maxCount, day, typeof(maxCount));
+
   return (
     <>
       <Row>
@@ -109,7 +109,6 @@ export const ButtonOfReaderBeforeJoin = ({ boardId, day }) => {
 };
 
 export const ButtonOfReaderAfterJoin = ({ boardId, writer }) => {
-	console.log("w! : ", writer)
   const dispatch = useDispatch();
 
   const participation = useSelector((state) => state.participation);

@@ -5,15 +5,12 @@ import { PARTI_JOIN_LIST_FAIL, PARTI_CREATE_FAIL, PARTI_CREATE_SUCCESS, PARTI_DE
 
 //공구 참가
 const joinParticipationApi = (params) => {
-	return customAxios(`/participation/${params}`, "post");
+	return customAxios(`/parti-service/parti/${params}`, "post");
 }
 
 export const joinParticipation = function* (action) {
-	console.log("part >> ")
-	console.log(action)
 	try {
 		const result = yield call(joinParticipationApi, action.params);
-		console.log(result);
 		yield put({ type: PARTI_CREATE_SUCCESS, data: result.data });
 	} catch(err) {
 		yield put({ type: PARTI_CREATE_FAIL, data: err.response.data });
@@ -22,7 +19,7 @@ export const joinParticipation = function* (action) {
 
 //공구 취소
 const exitParticipationApi = (params) => {
-	return customAxios(`/participation/${params}`, "delete");
+	return customAxios(`/parti-service/parti/${params}`, "delete");
 }
 
 export const exitParticipation = function* (action) {
@@ -37,7 +34,7 @@ export const exitParticipation = function* (action) {
 //공구 참여 여부 확인
 const checkJoinStateApi = (boardId) => {
 	return customAxios(
-		`/participation/${boardId}`
+		`/parti-service/parti/${boardId}`
 		, "get");
 }
 
@@ -52,8 +49,9 @@ export const checkJoinState = function* (action) {
 
 //공구 참여 리스트
 const getjoinListApi = (boardId) => {
+	console.log("listlistlistlist")
 	return customAxios(
-		`/participation/${boardId}/all`
+		`/parti-service/parti/${boardId}/all`
 		, "get"
 	);
 }

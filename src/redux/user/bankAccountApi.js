@@ -5,7 +5,7 @@ import { call, put } from "redux-saga/effects";
 //user의 은행계좌 가져오기
 const getBankAccountApi = (userId) => {
 	return customAxios(
-		`/user/getBankAccount/${userId}`,
+		`/user-service/user/getBankAccount/${userId}`,
 		"get"
 	);
 }

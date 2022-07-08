@@ -32,6 +32,11 @@ const Write = () => {
 		dispatch(update({id: target.id, value: target.value}));
 	}
 
+	const handleOnChangeCtg = ({ target }) => {
+		dispatch(update({id: "categoryId", value: target.value}));
+		dispatch(update({id: "categoryName", value: target.options[target.options.selectedIndex].innerHTML}));
+	}
+
 	const handleOnChangeFile = ({ target }) => {
 		let file = target.files[0];
 		dispatch(update({id: 'file', value: file}));
@@ -57,10 +62,10 @@ const Write = () => {
 					<div>
 						<div className="w-15 write-label">카테고리</div>
 						<div className="w-50 write-value">
-							<select className="w-60 glass" id="categoryId" value={board.data.categoryId} onChange={handleOnChange}>
+							<select className="w-60 glass" id="categoryId" value={board.data.categoryId} onChange={handleOnChangeCtg}>
 								<option>--선택--</option>
 								{category.data.map(val => (
-									<option key={val.id} value={val.id}>{val.name}</option>
+									<option key={val.categoryId} value={val.categoryId}>{val.categoryName}</option>
 								))}
 							</select>
 						</div>

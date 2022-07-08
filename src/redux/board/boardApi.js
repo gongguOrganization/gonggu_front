@@ -20,9 +20,9 @@ const postBoardApi = (params) => {
 
 export const postBoard = function* (action) {
 
+	console.log("action >> ", action);
 	try {
 		const result = yield call(postBoardApi, action.params.data);
-		console.log(result)
 		yield put({ type: CREATE_SUCCESS, data: result.data }); //put : 특성 액션을 디스패치
 	} catch (err) {
 		yield put({ type: CREATE_FAIL, data: err.response.data });
@@ -39,6 +39,7 @@ export const updateValue = function(action) {
 export const selectValue = function* (action) {
 	try {
 		const result = yield call(getBoardApi, action.id);
+		console.log("result >> ", result);
 		yield put({ type: READ_SUCCESS, data: result.data });
 	} catch(err) {
 		yield put({ type: READ_FAIL, data: err});
@@ -53,9 +54,7 @@ const getBoardApi = (id) => {
 
 //게시글 수정
 const updateBoardApi = (params) => {
-	console.log(params.data.get("regDate").replace("T", " "));
 	params.data.delete("regDate");
-	console.log(params.data.get("regDate"))
 	return axios.put(
 		"http://localhost:8000/board-detail-service/board/" + params.data.get("id"),
 		params.data,
