@@ -11,7 +11,7 @@ export const categorySelect = () => ({ type: CATEGORY_POST });
 
 //api
 function categoryApi() {
-  return axios.get("http://localhost:8000/category");
+  return axios.get("http://localhost:8000/board-service/category");
 }
 
 function* categoryAction(action) {

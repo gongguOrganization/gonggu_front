@@ -34,6 +34,8 @@ const Body = () => {
     }
   }, [board]);
 
+  console.log(board);
+
   return (
     <>
       <Container>

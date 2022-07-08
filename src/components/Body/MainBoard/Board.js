@@ -20,7 +20,7 @@ const Board = () => {
     dispatch(boardSelect({ title: "" }));
   }, []);
 
- 
+
   return (
    <div>
       <Search></Search>
@@ -35,7 +35,7 @@ const Board = () => {
         )
       }
       </div>
-      
+
         <div style={{margin:100}}>
           <BoardPagination
             total={mainboard.data.length}
@@ -79,18 +79,18 @@ const BoardContent = ({mainboard}) => {
 
   const { id } = useParams();
   // const mainboard = useSelector((state) => state.mainboard);
-  
+
   const bucket = "imagestore-39fb6.appspot.com";
   return (
     <Card className="CardStyle CardDisplay">
-      <Link to={`/detail/${mainboard.id}`} className="detail-link">
+      <Link to={`/detail/${mainboard.boardId}`} className="detail-link">
         <Card.Body>
           <Card.Img
             className="ContentImg"
             variant="top"
             alt="img"
             onError={(e) => { e.target.onerror = null; e.target.src = "/images/logo.png"; } }
-            src={"/images/logo.png"} //{`https://firebasestorage.googleapis.com/v0/b/${bucket}/o/${mainboard.img}?alt=media`}
+            src={`https://firebasestorage.googleapis.com/v0/b/${bucket}/o/${mainboard.img}?alt=media`}
           />
           <br></br>
           <br></br>

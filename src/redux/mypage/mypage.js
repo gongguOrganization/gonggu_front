@@ -32,16 +32,16 @@ export const update_changeCurrent = () => ({
 
 //api
 function mypageApi() {
-  return customAxios("/mypage", "get");
+  return customAxios("/my-service/mypage", "get");
 }
 
 function checkPwApi(params) {
   //console.log("pw>>>>>>>" + params);
-  return customAxios("/mypage", "post", params);
+  return customAxios("/my-service/mypage", "post", params);
 }
 
 function updateMyInfoApi(params) {
-  return customAxios("/mypage", "put", params);
+  return customAxios("/my-service/mypage", "put", params);
 }
 
 function* myPage() {

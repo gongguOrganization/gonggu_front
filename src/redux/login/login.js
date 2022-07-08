@@ -15,9 +15,8 @@ export const create = (params) => ({ type: SIGN_UP_REQUEST, params });
 export const select = (params) => ({ type: LOGIN_REQUEST, params });
 
 function signUpApi(params) {
-  console.log("넘어온 데이터api", params);
   return axios.post(
-    "http://localhost:8080/user/join",
+    "http://localhost:8080/user-service/user/join",
 
     params, // {params : {id: "aaa", pw: "1234"}}
   );
@@ -35,7 +34,7 @@ function* signUpUser(action) {
 
 function loginApi(params) {
   return axios.post(
-    "http://localhost:8080/user/login",
+    "http://localhost:8000/user-service/user/login",
     params, //  {id: "aaa", pw: "1234"}
   );
 }
@@ -43,8 +42,6 @@ function loginApi(params) {
 function* loginUser(action) {
   try {
     const result = yield call(loginApi, action.params);
-	console.log("this>>>")
-	console.log(result);
     yield put({
       type: LOGIN_SUCCESS,
       data: result.data,
@@ -123,7 +120,7 @@ const login = (state = initialLogin, action) =>
         draft.isLoggingIn = false;
         draft.isLoggedIn = true;
         draft.data.id = action.data.id;
-        draft.data.token = action.data.token;
+        draft.data.token = action.data;
         //isLoading=false;
         break;
       case LOGIN_FAIL:

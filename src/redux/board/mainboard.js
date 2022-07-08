@@ -7,7 +7,7 @@ export const boardSelect = (params) => ({ type: BOARD_POST, params });
 
 //api
 function mainBoardApi(params) {
-  return axios.get("http://localhost:8000/board", { params });
+  return axios.get("http://localhost:8000/board-service/board", { params });
 }
 
 function* mainBoard(action) {

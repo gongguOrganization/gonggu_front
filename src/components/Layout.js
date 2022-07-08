@@ -6,7 +6,7 @@ import AuthRouter from "../redux/AuthRouter";
 const Layout = () => {
 	return (
 		<div>
-			<AuthRouter></AuthRouter>
+			{/* <AuthRouter></AuthRouter> */}
 
 			<Header></Header>
 

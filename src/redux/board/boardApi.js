@@ -7,7 +7,7 @@ import { customAxios } from "../customAxios";
 
 const postBoardApi = (params) => {
 	return axios.post(
-		"http://localhost:8080/board",
+		"http://localhost:8000/board-detail-service/board",
 		params,
 		{
 			headers: {
@@ -47,7 +47,7 @@ export const selectValue = function* (action) {
 
 const getBoardApi = (id) => {
 	return axios.get(
-		`http://localhost:8080/board/${id}`
+		`http://localhost:8000/board-detail-service/board/${id}`
 	)
 }
 
@@ -57,7 +57,7 @@ const updateBoardApi = (params) => {
 	params.data.delete("regDate");
 	console.log(params.data.get("regDate"))
 	return axios.put(
-		"http://localhost:8080/board/" + params.data.get("id"),
+		"http://localhost:8000/board-detail-service/board/" + params.data.get("id"),
 		params.data,
 		{
 			headers: {
